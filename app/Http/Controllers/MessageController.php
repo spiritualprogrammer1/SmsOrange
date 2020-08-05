@@ -22,15 +22,11 @@ class MessageController extends Controller
 //            'phone' => 'required|numeric',
 //            'message' => 'required|max:255',
 //        ]);
-        $tab=['87870343','53101594','77986360'];
-       for($i=0; $i< 3 ; $i++) {
-           $SMS->message("va te brosser svp")
-               ->from("+22587870343")
-               ->to("+225".$tab[$i])
+
+           $SMS->message("votre message")
+               ->from("numero d'envoi")
+               ->to("numero de reception")
                ->send();
-       }
-
-
 //        $this->sendSMS($request['phone'], $request['message']);
 
         return redirect(route('message.create'));
